@@ -1,18 +1,20 @@
-# proxychains-rs
+# proxychains-rs (v5.0.0)
 
-This document is a concise usage and build guide for the proxychains-rs repository. It focuses on building, running and debugging the Rust port of proxychains, and also covers common issues.
+This document is a concise usage and build guide for the proxychains-rs repository (version 5.0.0). It focuses on building, running and debugging the Rust implementation that provides proxychains-compatible behavior, and also covers common issues.
 
 ---
 
 ## Overview
 
-proxychains-rs is a Rust port of proxychains-ng. Its goal is to produce a shared library that can be injected into target programs using LD_PRELOAD and that behaves (including textual output) the same way as the original C implementation. The runtime artifact produced by this project is `libproxychains_rs.so`.
+proxychains-rs (v5.0.0) is a Rust implementation that aims to be compatible with existing proxychains behavior. Its goal is to produce a shared library that can be injected into target programs using LD_PRELOAD and that behaves (including textual output) consistently with prior implementations. The runtime artifact produced by this project is `libproxychains_rs.so`.
 
 Main runtime artifact (release):
 
 - `target/release/libproxychains_rs.so` — the shared object produced by Rust (cdylib).
 
 Note: The supported runtime artifact is `target/release/libproxychains_rs.so`. The project does not rely on producing a compatibility copy named `libproxychains4.so` by default anymore.
+
+Tip: this repository contains a `rust-toolchain` pin (nightly). Cargo will automatically use the pinned nightly toolchain when building the project.
 
 Important: the repository uses some Rust nightly-only features in parts of the codebase (for example `c_variadic` / `extern_types`). Because of this, a nightly toolchain is required to build.
 

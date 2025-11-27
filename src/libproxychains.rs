@@ -512,7 +512,7 @@ pub unsafe extern "C" fn do_init() {
         proxychains_verbose_debug = 1;
     }
     crate::core::proxychains_write_log(
-        b"[proxychains] DLL init: proxychains-ng %s\n\0" as *const u8 as *const core::ffi::c_char
+        b"[proxychains] DLL init: proxychains-rs %s\n\0" as *const u8 as *const core::ffi::c_char
             as *mut core::ffi::c_char,
         proxychains_get_version(),
     );

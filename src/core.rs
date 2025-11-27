@@ -4211,7 +4211,8 @@ pub unsafe extern "C" fn proxy_getaddrinfo(
     } else {
         __assert_fail(
             b"(size_t)p == (size_t) space\0" as *const u8 as *const core::ffi::c_char,
-            b"/home/adysec/\xE8\xA7\x86\xE9\xA2\x91/proxychains-ng-master/proxychains-C/src/core.c\0"
+            /* removed absolute path containing sensitive info */
+            b"src/core.c\0"
                 as *const u8 as *const core::ffi::c_char,
             1013 as core::ffi::c_uint,
             __ASSERT_FUNCTION.as_ptr(),
